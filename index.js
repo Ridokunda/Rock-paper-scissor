@@ -1,15 +1,16 @@
 console.log("Hello world!");
 
-let arr = ["Rock", "Paper", "Scissor"] ;
+let arr = ["rock", "paper", "scissor"] ;
 
 function getComputerChoice(){
-    return arr[Math.floor(Math.random()*arr.length)];
+    const choice = arr[Math.floor(Math.random()*arr.length)]
+    return choice;
 }
 
 
 
 function PlayRound(playerselection,computerselection){
-    if(playerselection == "rock" && computerselection == "scissor"){
+    if(playerselection === "rock" && computerselection === "scissor"){
         return "You win rock beats scissor!";
     }else if(playerselection.toLowerCase()==="scissor" && computerselection === "rock"){
         return "You lose rock beats scissor!";
@@ -28,5 +29,6 @@ function PlayRound(playerselection,computerselection){
 
 const playerselection = "rock";
 const computerselection = getComputerChoice();
+const outcome = PlayRound(playerselection,computerselection)
 console.log(computerselection);
-console.log(PlayRound(playerselection,computerselection));
+console.log(outcome);
