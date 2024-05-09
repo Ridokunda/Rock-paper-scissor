@@ -48,7 +48,7 @@ function game(){
     
     for(let i = 0; i < 5; i++){
         
-        const playerselection = prompt("Choose rock, paper or scissor");
+        
         const computerselection = getComputerChoice();
         const outcome = PlayRound(playerselection,computerselection,obj);
         console.log(outcome);
@@ -68,4 +68,4 @@ function game(){
     }
 }
 
-game();
+//game();
