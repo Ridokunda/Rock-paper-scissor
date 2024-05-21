@@ -14,48 +14,53 @@ let obj = {
 
 function PlayRound(playerselection,computerselection,obj){
     
-    if(playerselection.toLowerCase() === "rock" && computerselection === "scissor"){
+    if(playerselection === "rock" && computerselection === "scissor"){
         obj.pscore++;
         return "You win rock beats scissor!";
     }else if(playerselection.toLowerCase()=== "scissor" && computerselection === "rock"){
         obj.cscore++;
         return "You lose rock beats scissor!";
-    }else if(playerselection.toLowerCase() === "paper" && computerselection === "rock"){
+    }else if(playerselection === "paper" && computerselection === "rock"){
         obj.pscore++;
         return "You win paper beats rock!";
-    }else if(playerselection.toLowerCase() === "rock" && computerselection === "paper"){
+    }else if(playerselection === "rock" && computerselection === "paper"){
         obj.cscore++;
         return "You lose paper beats rock!";
-    }else if(playerselection.toLowerCase() === "scissor" && computerselection === "paper"){
+    }else if(playerselection === "scissor" && computerselection === "paper"){
         obj.pscore++;
         return "You win scissor beats paper!";
-    }else if(playerselection.toLowerCase() === "paper" && computerselection === "scissor"){
+    }else if(playerselection === "paper" && computerselection === "scissor"){
         obj.cscore++;
         return "You lose scissor beats paper!";
-    }else if(playerselection.toLowerCase() === computerselection){
+    }else if(playerselection === computerselection){
         return "Draw. Try Again...";
     }  
 }
 
-
+function getPlayerChoice() {
+    return new Promise((resolve) => {
+        document.getElementById('rock').onclick = () => resolve("rock");
+        document.getElementById('paper').onclick = () => resolve("paper");
+        document.getElementById('scissor').onclick = () => resolve("scissor");
+    });
+}
 //const outcome = PlayRound(playerselection,computerselection);
 
-function game(){
+async function game(){
     let obj = {
         pscore : 0,
         cscore : 0
     }
     
     for(let i = 0; i < 5; i++){
-        
-        
+        console.log(`Round ${i + 1}`);
+        const playerselection = await getPlayerChoice();
         const computerselection = getComputerChoice();
         const outcome = PlayRound(playerselection,computerselection,obj);
         console.log(outcome);
-        console.log(obj.pscore);
-        console.log(obj.cscore);
+        console.log('Player Score: '+obj.pscore);
+        console.log('Computer Score: '+obj.cscore);
         
-       
     }
     if(obj.pscore > obj.cscore){
         console.log("You won the game!"); 
@@ -63,9 +68,11 @@ function game(){
     if(obj.cscore > obj.pscore){
         console.log("You lost the game...");
     }
-    if(obj.cscore = obj.pscore){
+    if(obj.cscore == obj.pscore){
         console.log("Draw!!!");
     }
 }
 
-//game();
+document.addEventListener('DOMContentLoaded', () => {
+    game();
+});
