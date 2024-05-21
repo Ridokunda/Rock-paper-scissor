@@ -44,7 +44,7 @@ header h1{
 
 
 .options div{
-    height:120px;
+    height:150px;
     width: 200px;
     border: 0.5px solid black;
     background-color: rgb(83, 49, 7);
@@ -54,7 +54,9 @@ header h1{
     
 }
 .options a{
-    color: white;
+    color: black;
+    font-size: large;
+    font-style:italic;
 }
 .options a:link{
     text-decoration: none;
