@@ -5,7 +5,6 @@ function getComputerChoice(){
 }
 
 function PlayRound(playerselection, computerselection, obj){
-    // normalize
     const p = playerselection.toLowerCase();
     const c = computerselection.toLowerCase();
 
@@ -43,7 +42,6 @@ function PlayRound(playerselection, computerselection, obj){
 
 function getPlayerChoice() {
     return new Promise((resolve) => {
-        // remove any previous handlers to avoid duplicate resolves
         const rockEl = document.getElementById('rock');
         const paperEl = document.getElementById('paper');
         const scissorEl = document.getElementById('scissor');
