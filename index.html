@@ -14,6 +14,18 @@
     <div class="player">
         <h2>Play a game</h2>
         <h4>Choose one option</h4>
+        <div class="status">
+            <div class="scoreboard">
+                <div>Player: <span id="pScore">0</span></div>
+                <div>Computer: <span id="cScore">0</span></div>
+                <div>Round: <span id="roundNum">0 / 5</span></div>
+            </div>
+            <div class="message">
+                <div id="roundMsg">Make your choice to start the round</div>
+                <div id="resultMsg"></div>
+            </div>
+            <button id="replay" class="replay-btn" style="display:none">Play Again</button>
+        </div>
         <div class="options">
             <a href="" id="rock"><div style="background-image: url('images/rock.png'); background-size: cover; background-repeat: no-repeat; background-position: center;"><span>Rock</span></div></a>
             <a href="" id="paper"><div style="background-image: url('images/paper.png'); background-size: cover; background-repeat: no-repeat; background-position: center;"><span>Paper</span></div></a>

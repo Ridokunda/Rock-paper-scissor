@@ -33,6 +33,52 @@ header h1{
     text-align: center;
 }
 
+.status{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin: 10px 0;
+}
+
+.scoreboard{
+    display:flex;
+    gap:20px;
+    background-color: rgba(0,0,0,0.15);
+    padding:8px 12px;
+    border-radius:8px;
+    color: #fff;
+}
+
+.message{
+    background-color: rgba(255,255,255,0.06);
+    padding:8px 12px;
+    border-radius:8px;
+    color: #fff;
+}
+
+#roundMsg{
+    font-style: italic;
+}
+
+#resultMsg{
+    font-weight: 700;
+    margin-top:6px;
+}
+
+.replay-btn{
+    align-self: flex-start;
+    padding:8px 12px;
+    border-radius:6px;
+    border: none;
+    background-color: rgb(162, 127, 89);
+    color: rgb(83,49,7);
+    cursor: pointer;
+}
+
+.replay-btn:hover{
+    filter: brightness(0.95);
+}
+
 .options{
     display: flex;
     flex-direction: column;
