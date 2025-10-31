@@ -39,12 +39,20 @@ function PlayRound(playerselection,computerselection,obj){
 
 function getPlayerChoice() {
     return new Promise((resolve) => {
-        document.getElementById('rock').onclick = () => resolve("rock");
-        document.getElementById('paper').onclick = () => resolve("paper");
-        document.getElementById('scissor').onclick = () => resolve("scissor");
+        document.getElementById('rock').onclick = (event) =>{
+            event.preventDefault();
+            resolve("rock");
+        } 
+        document.getElementById('paper').onclick = (event) =>{
+            event.preventDefault();
+            resolve("paper");
+        }    
+        document.getElementById('scissor').onclick = () =>{
+            event.preventDefault();
+            resolve("scissor");
+        } 
     });
 }
-//const outcome = PlayRound(playerselection,computerselection);
 
 async function game(){
     let obj = {
